@@ -1,0 +1,8 @@
+.popup__opened-place{
+  margin: 0;
+  color: #fff;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.21;
+  margin-top: 10px;
+}

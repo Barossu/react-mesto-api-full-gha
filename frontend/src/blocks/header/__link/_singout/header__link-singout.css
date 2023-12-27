@@ -1,0 +1,11 @@
+.header__link_singout{
+  color: #a9a9a9;
+}
+
+@media screen and (max-width: 320px) {
+  .header__link_singout{
+    font-size: 18px;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+}

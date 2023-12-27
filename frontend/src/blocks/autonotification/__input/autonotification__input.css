@@ -1,0 +1,19 @@
+.autonotification__input{
+  color: #fff;
+  background: none;
+  padding: 0 0 13px 0;
+  margin: 30px 0 0 0;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.21;
+}
+
+.autonotification__input:focus{
+  outline-width: 0;
+}
+
+.autonotification__input::placeholder{
+  color: #ccc;
+}

@@ -1,0 +1,21 @@
+.header__button{
+  display: none; 
+}
+
+@media screen and (max-width: 320px) {
+  .header__button{
+    display: block;
+    background: none;
+    border: none;
+    margin-right: 30px;
+    padding: 0;
+    transition: opacity 0.3s linear;
+    align-self: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .header__button:hover{
+    opacity: 0.6;
+  }
+}

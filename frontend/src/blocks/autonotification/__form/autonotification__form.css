@@ -1,0 +1,12 @@
+.autonotification__form{
+  max-width: 358px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+@media screen and (max-width: 320px) {
+  .autonotification__form{
+    max-width: 260px;
+  }
+}

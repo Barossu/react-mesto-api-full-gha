@@ -1,0 +1,17 @@
+.autonotification__singin-link{
+  max-width: 358px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin: 15px auto 80px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.21;
+  transition: opacity 0.3s linear;
+}
+
+.autonotification__singin-link:hover{
+  opacity: 0.6;
+}
