@@ -9,6 +9,7 @@ function Card(props){
 
   function handleLikeClick() {
     props.onCardLike(props.card)
+    console.log(props.card)
   }
 
   function hendleDeleteCard() {
@@ -16,8 +17,8 @@ function Card(props){
   }
 
   const currentUser = React.useContext(CurrentUserContext);
-  const isOwn = props.card.owner._id === currentUser._id;
-  const isLiked = props.card.likes.some(item => item._id === currentUser._id)
+  const isOwn = props.card.owner === currentUser._id;
+  const isLiked = props.card.likes.some(item => item === currentUser._id)
   const cardLikeButtonClassName = (`elements__like ${isLiked && 'elements__like_active'}`)
 
   return (

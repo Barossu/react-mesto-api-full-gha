@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://auth.nomoreparties.co';
+export const BASE_URL = 'http://api.mesto.kalashnikovpv.nomoredomainsmonster.ru';
 
 function getResponse(res) {
   if (!res.ok) {
@@ -30,10 +30,9 @@ export const authorize = (password, email) => {
   })
     .then((res) => getResponse(res))
     .then((data) => {
-      localStorage.setItem('token', data.token);
+      localStorage.setItem('token', data.jwt);
       return data;
     })
-    //.then(res => console.log(res))//////////////////////////////
 }
 
 export const checkToken = (token) => {
@@ -46,5 +45,4 @@ export const checkToken = (token) => {
     }
   })
     .then((res) => getResponse(res))
-    //.then(res => console.log(res))//////////////////////////////
 }

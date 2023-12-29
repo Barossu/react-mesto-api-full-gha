@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const helmet = require('helmet');
+const cors = require('cors');
 const { rateLimit } = require('express-rate-limit');
 const { errors } = require('celebrate');
 const cookieParser = require('cookie-parser');
@@ -30,6 +31,14 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.use(requestLogger);
+app.use(cors());
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 app.use(router);
 app.use(errorLogger);
 

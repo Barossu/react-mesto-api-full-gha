@@ -66,9 +66,10 @@ class Api {
  }
 
 const api = new Api({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'http://api.mesto.kalashnikovpv.nomoredomainsmonster.ru',
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem('token')}`
   }
 })
 

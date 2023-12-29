@@ -65,13 +65,13 @@ function App() {
   function handleRegister(password, email){
     auth.register(password, email)
       .then((data) => {
-        verificationOfRegistration(data.data)
-        if (data.data){
+        verificationOfRegistration(data)
+        if (data){
           navigate('/signin', {replace: true})
         }
       })
       .catch((data) => {
-        verificationOfRegistration(data.data);
+        verificationOfRegistration(data);
         console.error(data)
       })
   }
@@ -83,7 +83,7 @@ function App() {
         .then((res) => {
           if (res){
             setLoggedIn(true);
-            setUserEmail(res.data.email)
+            setUserEmail(res.email)
             navigate('/main', {replace: true})
           }
         })
@@ -97,7 +97,7 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(item => item._id === currentUser._id)
+    const isLiked = card.likes.some(item => item === currentUser._id)
     api.toggleLike(card._id, isLiked).then((newCard) => {
         setCards((state) => state.map((c) => c._id === card._id ? newCard : c))
       }).catch(console.error)

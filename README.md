@@ -11,6 +11,6 @@
 
 IP-адрес 158.160.128.141
 
-Frontend https://...
+Frontend https://mesto.kalashnikovpv.nomoredomainsmonster.ru
 
-Backend https://...
+Backend https://api.mesto.kalashnikovpv.nomoredomainsmonster.ru

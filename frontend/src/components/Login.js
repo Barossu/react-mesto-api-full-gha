@@ -19,7 +19,7 @@ function Login({handleLogin, checkRegister}){
     const {password, email} = formValue;
     auth.authorize(password, email)
       .then((data) => {
-        if (data.token){
+        if (data.jwt){
           setFormValue({email: '', password: ''});
           handleLogin();
           navigate('/main', {replace: true})
