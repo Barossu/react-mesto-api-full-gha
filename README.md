@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.128.141
+IP 158.160.128.141
 
 Frontend https://mesto.kalashnikovpv.nomoredomainsmonster.ru
 
