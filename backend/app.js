@@ -40,12 +40,13 @@ app.get('/crash-test', () => {
 });
 
 app.use(router);
-app.use(errorLogger);
-
-app.use(errors());
 app.all('*', (req, res, next) => {
   next(new NotFoundError('Путь не найден'));
 });
+
+app.use(errorLogger);
+
+app.use(errors());
 app.use(errorHandler);
 
 app.listen(PORT);

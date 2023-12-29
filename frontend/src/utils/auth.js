@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://api.mesto.kalashnikovpv.nomoredomainsmonster.ru';
+export const BASE_URL = 'https://api.mesto.kalashnikovpv.nomoredomainsmonster.ru';
 
 function getResponse(res) {
   if (!res.ok) {
