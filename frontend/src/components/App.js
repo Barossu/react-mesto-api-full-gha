@@ -57,7 +57,7 @@ function App() {
     if (data){
       setIsRegister({register: true, text: 'Вы успешно зарегистрировались!'})
     } else {
-      setIsRegister({register: false, text: 'Что-то пошло не так!Попробуйте ещё раз.'})
+      setIsRegister({register: false, text: 'Что-то пошло не так! Попробуйте ещё раз.'})
     }
 
   }
@@ -65,13 +65,13 @@ function App() {
   function handleRegister(password, email){
     auth.register(password, email)
       .then((data) => {
-        verificationOfRegistration(data)
+        verificationOfRegistration(data.email)
         if (data){
           navigate('/signin', {replace: true})
         }
       })
       .catch((data) => {
-        verificationOfRegistration(data);
+        verificationOfRegistration(data.email);
         console.error(data)
       })
   }

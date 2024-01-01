@@ -17,11 +17,22 @@ class Api {
 
   
   getInitialCards() {
-    return this._request(`${this._baseURL}/cards`, { method: 'GET', headers: this._headers });
+    return this._request(`${this._baseURL}/cards`, {
+      method: 'GET',
+      headers: {
+        ...this._headers,
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    });
   };
 
   getProfileInfo(){
-    return this._request(`${this._baseURL}/users/me`, { method: 'GET', headers: this._headers });
+    return this._request(`${this._baseURL}/users/me`, {
+      method: 'GET',
+      headers: {
+        ...this._headers,
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      } });
   };
   
   postNewCard(name, link){
@@ -63,13 +74,12 @@ class Api {
   deleteCard(cardId){
     return this._request(`${this._baseURL}/cards/${cardId}`, { method: 'DELETE', headers: this._headers });
   };
- }
+}
 
 const api = new Api({
   baseURL: 'https://api.mesto.kalashnikovpv.nomoredomainsmonster.ru',
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': `Bearer ${localStorage.getItem('token')}`
   }
 })
 

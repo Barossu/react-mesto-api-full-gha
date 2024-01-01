@@ -25,7 +25,9 @@ function Login({handleLogin, checkRegister}){
           navigate('/main', {replace: true})
         }
       })
-      .catch((data) => checkRegister(data.data))
+      .catch((data) => {
+        checkRegister(data)
+      })
   };
 
   return (
